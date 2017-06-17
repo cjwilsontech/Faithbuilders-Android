@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.eusebeia.faithbuilders.ScheduleDetailFragment">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <!--android.support.design.widget.CollapsingToolbarLayout-->
+            <!-- http://stackoverflow.com/questions/37163511/coordinatorlayout-collapsingtoolbarlayout-scrolling-underneath-the-status-bar -->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/schedule_detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:minHeight="56dp"
+                app:title="Class Detail" />
+        </android.support.design.widget.AppBarLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="8dp" >
+
+            <TextView
+                android:id="@+id/schedule_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Doing the Thing"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/schedule_detail_speaker_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:civ_border_width="0dp"
+                app:civ_border_color="#000000"
+                android:layout_below="@+id/schedule_detail_name"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/primary_text_light"
+                android:id="@+id/schedule_detail_speaker_name"
+                android:layout_below="@+id/schedule_detail_name"
+                android:layout_toRightOf="@+id/schedule_detail_speaker_image"
+                android:layout_toEndOf="@+id/schedule_detail_speaker_image"
+                android:layout_alignTop="@id/schedule_detail_speaker_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thursday, July 7"
+                android:textColor="@android:color/secondary_text_light"
+                android:id="@+id/schedule_detail_date"
+                android:layout_below="@+id/schedule_detail_speaker_name"
+                android:layout_toRightOf="@+id/schedule_detail_speaker_image"
+                android:layout_toEndOf="@+id/schedule_detail_speaker_image"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7:00 PM - 8:00 PM"
+                android:textColor="@android:color/secondary_text_light"
+                android:id="@+id/schedule_detail_time"
+                android:layout_below="@+id/schedule_detail_date"
+                android:layout_toRightOf="@+id/schedule_detail_speaker_image"
+                android:layout_toEndOf="@+id/schedule_detail_speaker_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Auditorium"
+                android:textColor="@android:color/primary_text_light"
+                android:id="@+id/schedule_detail_location"
+                android:layout_below="@+id/schedule_detail_time"
+                android:layout_toRightOf="@+id/schedule_detail_speaker_image"
+                android:layout_toEndOf="@+id/schedule_detail_speaker_image"
+                android:layout_marginTop="5dp"/>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/schedule_detail_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@id/schedule_detail_location"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

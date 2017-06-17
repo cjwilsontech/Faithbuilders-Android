@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:overScrollMode="never"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabTextAppearance="@style/TextAppearance.Design.Tab"
+        app:tabMode="scrollable" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/colorBackground" />
+
+</LinearLayout-->
+
+
+
+<TabHost
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/testtabhost1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TabWidget android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            />
+        <FrameLayout android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/view_tab1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+                    android:id="@+id/schedule_list1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/view_tab2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+                    android:id="@+id/schedule_list2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/view_tab3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+                    android:id="@+id/schedule_list3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+</TabHost>

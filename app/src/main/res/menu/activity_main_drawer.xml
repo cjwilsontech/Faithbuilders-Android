@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single" android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/label_home"
+            android:checked="true" />
+        </group>
+        <group android:checkableBehavior="single" android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_menu_schedule"
+            android:title="@string/label_schedule" />
+        <item
+            android:id="@+id/nav_speakers"
+            android:icon="@drawable/ic_menu_speakers"
+            android:title="@string/label_speakers" />
+        <!--item
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/ic_menu_maps"
+            android:title="@string/label_maps" /-->
+        </group>
+        <group android:checkableBehavior="single" android:id="@+id/group3">
+        <!--item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_menu_donate"
+            android:title="@string/label_donate" /-->
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/label_about" />
+    </group>
+</menu>
