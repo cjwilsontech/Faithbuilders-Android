@@ -16,6 +16,9 @@
     <string name="label_day1">Thu. July 6</string>
     <string name="label_day2">Fri. July 7</string>
     <string name="label_day3">Sat. July 8</string>
+    <string name="label_day1_full">Thursday, July 6</string>
+    <string name="label_day2_full">Friday, July 7</string>
+    <string name="label_day3_full">Saturday, July 8</string>
 
     <string name="title">Faithbuilders 2017</string>
     <string name="theme">Conquering All Fears</string>

@@ -99,13 +99,13 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
         String date;
         switch (scheduleItem.getDay()) {
             case 0:
-                date = "Thursday, July 7";
+                date = getString(R.string.label_day1_full);
                 break;
             case 1:
-                date = "Friday, July 8";
+                date = getString(R.string.label_day2_full);
                 break;
             default:
-                date = "Saturday, July 9";
+                date = getString(R.string.label_day3_full);
                 break;
         }
         textView.setText(date);
