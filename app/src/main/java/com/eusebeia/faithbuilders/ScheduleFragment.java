@@ -48,9 +48,9 @@ public class ScheduleFragment extends Fragment implements AdapterView.OnItemClic
         mTabHost = (TabHost) v.findViewById(R.id.testtabhost1);
         mTabHost.setup();
 
-        mTabHost.addTab(mTabHost.newTabSpec("tab_test1").setIndicator("Thu. June 7").setContent(R.id.view_tab1));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_test2").setIndicator("Fri. June 8").setContent(R.id.view_tab2));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_test3").setIndicator("Sat. June 9").setContent(R.id.view_tab3));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_test1").setIndicator(getText(R.string.label_day1)).setContent(R.id.view_tab1));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_test2").setIndicator(getText(R.string.label_day2)).setContent(R.id.view_tab2));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_test3").setIndicator(getText(R.string.label_day3)).setContent(R.id.view_tab3));
         mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
