@@ -16,10 +16,10 @@
             android:id="@+id/nav_speakers"
             android:icon="@drawable/ic_menu_speakers"
             android:title="@string/label_speakers" />
-        <!--item
+        <item
             android:id="@+id/nav_maps"
             android:icon="@drawable/ic_menu_maps"
-            android:title="@string/label_maps" /-->
+            android:title="@string/label_maps" />
         </group>
         <group android:checkableBehavior="single" android:id="@+id/group3">
         <!--item

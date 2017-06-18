@@ -7,8 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.eusebeia.faithbuilders.HomeFragment">
-
-        <!-- TODO: Update blank fragment layout -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/toolbar_dropshadow"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -17,7 +19,8 @@
             android:layout_gravity="center_horizontal|top"
             android:src="@drawable/logo"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"

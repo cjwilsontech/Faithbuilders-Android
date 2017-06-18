@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -38,6 +38,7 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
     private LatLng currentLatLng;
     private boolean mapIsLoaded;
     private boolean locationRequested;
+    private static View view;
 
     public ScheduleDetailFragment() {
         mapIsLoaded = false;
@@ -59,69 +60,78 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
                              Bundle savedInstanceState) {
 
         // Inflate the view.
-        View v = inflater.inflate(R.layout.fragment_schedule_detail, container, false);
+        if (view != null) {
+            ViewGroup parent = (ViewGroup) view.getParent();
+            if (parent != null)
+                parent.removeView(view);
+        }
+        try {
+            view = inflater.inflate(R.layout.fragment_schedule_detail, container, false);
+            // Configure the toolbar.
+            Toolbar toolbar = (Toolbar) view.findViewById(R.id.schedule_detail_toolbar);
+            toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Back button - close the fragment.
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(ScheduleDetailFragment.this).commit();
+                }
+            });
 
-        // Configure the toolbar.
-        Toolbar toolbar = (Toolbar) v.findViewById(R.id.schedule_detail_toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Back button - close the fragment.
-                getActivity().getSupportFragmentManager().beginTransaction().remove(ScheduleDetailFragment.this).commit();
+            // Set the view's data.
+            TextView speakerTextView = (TextView) view.findViewById(R.id.schedule_detail_speaker_name);
+            ImageView imageView = (ImageView) view.findViewById(R.id.schedule_detail_speaker_image);
+            if (scheduleItem.getSpeaker() != null) {
+                // Photo
+                imageView.setImageResource(scheduleItem.getSpeaker().getPhoto());
+
+                // Speaker Name
+                speakerTextView.setText(scheduleItem.getSpeaker().getName());
+            } else {
+                speakerTextView.setText(R.string.speaker_unavailable);
+                imageView.setImageResource(R.drawable.profile);
             }
-        });
 
-        // Set the view's data.
-        TextView speakerTextView = (TextView) v.findViewById(R.id.schedule_detail_speaker_name);
-        ImageView imageView = (ImageView) v.findViewById(R.id.schedule_detail_speaker_image);
-        if (scheduleItem.getSpeaker() != null) {
-            // Photo
-            imageView.setImageResource(scheduleItem.getSpeaker().getPhoto());
+            // Item Name
+            TextView textView = (TextView) view.findViewById(R.id.schedule_detail_name);
+            textView.setText(scheduleItem.getName());
 
-            // Speaker Name
-            speakerTextView.setText(scheduleItem.getSpeaker().getName());
-        } else {
-            speakerTextView.setText(R.string.speaker_unavailable);
-            imageView.setImageResource(R.drawable.profile);
+            // Location
+            textView = (TextView) view.findViewById(R.id.schedule_detail_location);
+            textView.setText(scheduleItem.getLocation());
+
+            // Date
+            textView = (TextView) view.findViewById(R.id.schedule_detail_date);
+            String date;
+            switch (scheduleItem.getDay()) {
+                case 0:
+                    date = getString(R.string.label_day1_full);
+                    break;
+                case 1:
+                    date = getString(R.string.label_day2_full);
+                    break;
+                default:
+                    date = getString(R.string.label_day3_full);
+                    break;
+            }
+            textView.setText(date);
+
+            // Time
+            textView = (TextView) view.findViewById(R.id.schedule_detail_time);
+            String time = scheduleItem.getTimeStart() + " - " + scheduleItem.getTimeEnd();
+            textView.setText(time);
+
+            // Set the toolbar title.
+            //toolbar.setTitle(currentSpeaker.getName());
+
+            mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.schedule_detail_map);
+            mapFragment.getMapAsync(this);
+
+        } catch (InflateException e) {
+            // Map is already there, just return the view as it is.
         }
 
-        // Item Name
-        TextView textView = (TextView) v.findViewById(R.id.schedule_detail_name);
-        textView.setText(scheduleItem.getName());
-
-        // Location
-        textView = (TextView) v.findViewById(R.id.schedule_detail_location);
-        textView.setText(scheduleItem.getLocation());
-
-        // Date
-        textView = (TextView) v.findViewById(R.id.schedule_detail_date);
-        String date;
-        switch (scheduleItem.getDay()) {
-            case 0:
-                date = getString(R.string.label_day1_full);
-                break;
-            case 1:
-                date = getString(R.string.label_day2_full);
-                break;
-            default:
-                date = getString(R.string.label_day3_full);
-                break;
-        }
-        textView.setText(date);
-
-        // Time
-        textView = (TextView) v.findViewById(R.id.schedule_detail_time);
-        String time = scheduleItem.getTimeStart() + " - " + scheduleItem.getTimeEnd();
-        textView.setText(time);
-
-        // Set the toolbar title.
-        //toolbar.setTitle(currentSpeaker.getName());
-
-        mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.schedule_detail_map);
-        mapFragment.getMapAsync(this);
-
-        return v;
+        return view;
     }
 
     public void onDestroyView() {

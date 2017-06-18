@@ -116,14 +116,14 @@ public class ScheduleListAdapter extends BaseAdapter implements StickyListHeader
 
         if (convertView == null) {
             holder = new HeaderViewHolder();
-            convertView = mInflater.inflate(R.layout.header, parent, false);
+            convertView = mInflater.inflate(R.layout.schedule_list_section_header, parent, false);
             holder.text = (TextView) convertView.findViewById(R.id.header_text);
             convertView.setTag(holder);
         } else {
             holder = (HeaderViewHolder) convertView.getTag();
         }
 
-        // set header text as first char in name
+        // set schedule_list_section_header text as first char in name
         CharSequence headerChar = mScheduleItems.get(position).getTimeStart();
         holder.text.setText(headerChar);
 

@@ -4,8 +4,6 @@ package com.eusebeia.faithbuilders;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.eusebeia.faithbuilders.R;
-
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,14 +64,14 @@ public class SpeakersFragment extends Fragment {
 
     private class MyListAdapter extends ArrayAdapter<Speaker> {
         public MyListAdapter() {
-            super(getActivity(), R.layout.da_item, MainActivity.SpeakerList);
+            super(getActivity(), R.layout.speaker_list_item, MainActivity.SpeakerList);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View itemView = convertView;
             if (itemView == null)
-                itemView = getActivity().getLayoutInflater().inflate(R.layout.da_item, null);
+                itemView = getActivity().getLayoutInflater().inflate(R.layout.speaker_list_item, null);
 
             // Find the speaker to work with.
             Speaker currentSpeaker = MainActivity.SpeakerList.get(position);
@@ -100,7 +90,6 @@ public class SpeakersFragment extends Fragment {
             textView.setText(currentSpeaker.getLocation());
 
             return itemView;
-            //return super.getView(position, convertView, parent);
         }
     }
 }

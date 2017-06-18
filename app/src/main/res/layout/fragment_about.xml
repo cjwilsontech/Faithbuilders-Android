@@ -14,13 +14,18 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
                 android:layout_gravity="center_horizontal|top"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                android:layout_marginTop="16dp" />
 
             <View style="@style/Divider"/>
 

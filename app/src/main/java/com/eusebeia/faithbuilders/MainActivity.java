@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
@@ -150,8 +149,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             changeFragment(new SpeakersFragment());
         } else if (id == R.id.nav_schedule) {
             changeFragment(new ScheduleFragment());
-        //} else if (id == R.id.nav_maps) {
-        //    changeFragment(new MapsFragment());
+        } else if (id == R.id.nav_maps) {
+            changeFragment(new MapsFragment());
         //} else if (id == R.id.nav_donate) {
         //    changeFragment(new DonateFragment());
         } else if (id == R.id.nav_about) {

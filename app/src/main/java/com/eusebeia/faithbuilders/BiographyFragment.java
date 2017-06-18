@@ -74,9 +74,6 @@ public class BiographyFragment extends DialogFragment {
         textView = (TextView) v.findViewById(R.id.bio_description);
         textView.setText(currentSpeaker.getDescription());
 
-        // Set the toolbar title.
-        //toolbar.setTitle(currentSpeaker.getName());
-
         // Inflate the layout for this fragment
         return v;
     }

@@ -9,9 +9,10 @@
     <string name="label_home">Home</string>
     <string name="label_speakers">Speakers</string>
     <string name="label_schedule">Schedule</string>
-    <string name="label_maps">Maps</string>
+    <string name="label_maps">Campus Map</string>
     <string name="label_donate">Donate</string>
     <string name="label_about">About</string>
+    <string name="label_biography">Biography</string>
 
     <string name="label_day1">Thu. July 6</string>
     <string name="label_day2">Fri. July 7</string>
