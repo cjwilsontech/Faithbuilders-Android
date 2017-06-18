@@ -238,7 +238,12 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
         mapIsLoaded = true;
 
         if (currentLatLng != null) {
+            // Show the campus view relative to the current position.
             setMapViewToBounds(currentLatLng, destinationLatLng);
+        } else {
+            // Show the campus view.
+            map.moveCamera(CameraUpdateFactory.newLatLng(destinationLatLng));
+            map.animateCamera(CameraUpdateFactory.zoomTo(16));
         }
     }
 

@@ -45,10 +45,8 @@
         <FrameLayout android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@drawable/toolbar_dropshadow"/>
+
+            <View style="@style/DropShadow"/>
 
             <RelativeLayout
                 android:id="@+id/view_tab1"

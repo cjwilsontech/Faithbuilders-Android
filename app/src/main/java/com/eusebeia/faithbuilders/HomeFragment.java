@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 
 /**
@@ -45,10 +46,11 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button navButton = (Button) v.findViewById(R.id.button_navigate);
-        Button webButton = (Button) v.findViewById(R.id.button_website);
+        LinearLayout navGroup = (LinearLayout) v.findViewById(R.id.locationGroup);
+        LinearLayout webGroup = (LinearLayout) v.findViewById(R.id.websiteGroup);
+        LinearLayout facebookGroup = (LinearLayout) v.findViewById(R.id.facebookGroup);
 
-        navButton.setOnClickListener(new View.OnClickListener() {
+        navGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent navigation = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=Pacific+Lutheran+University"));
@@ -56,10 +58,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        webButton.setOnClickListener(new View.OnClickListener() {
+        webGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.faithbuildersnw.com/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        facebookGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/FaithBuilders2016/"));
                 startActivity(browserIntent);
             }
         });

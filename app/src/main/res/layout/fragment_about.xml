@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.eusebeia.faithbuilders.AboutFragment">
+    tools:context=".AboutFragment">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -14,10 +14,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@drawable/toolbar_dropshadow"/>
+
+            <View style="@style/DropShadow"/>
 
             <ImageView
                 android:layout_width="wrap_content"
