@@ -3,6 +3,7 @@ package com.eusebeia.faithbuilders;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar = null;
     public static List<Speaker> SpeakerList = new ArrayList<Speaker>();
     public static ArrayList<ScheduleItem> ScheduleList = new ArrayList<ScheduleItem>();
-    public CharSequence mTitle = "Faithbuilders";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -121,6 +121,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+
+            // Correct the selected item in the NavigationView.
+            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+            if (currentFragment instanceof HomeFragment) {
+                navigationView.setCheckedItem(R.id.nav_home);
+            } else if (currentFragment instanceof SpeakersFragment) {
+                navigationView.setCheckedItem(R.id.nav_speakers);
+            } else if (currentFragment instanceof ScheduleFragment) {
+                navigationView.setCheckedItem(R.id.nav_schedule);
+            } else if (currentFragment instanceof MapsFragment) {
+                navigationView.setCheckedItem(R.id.nav_maps);
+            } else if (currentFragment instanceof AboutFragment) {
+                navigationView.setCheckedItem(R.id.nav_about);
+            }
         }
     }
 
