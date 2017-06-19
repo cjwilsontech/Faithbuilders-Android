@@ -69,27 +69,27 @@ public class SpeakersFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View itemView = convertView;
-            if (itemView == null)
-                itemView = getActivity().getLayoutInflater().inflate(R.layout.speaker_list_item, null);
+            if (convertView == null) {
+                convertView = getActivity().getLayoutInflater().inflate(R.layout.speaker_list_item, null);
 
-            // Find the speaker to work with.
-            Speaker currentSpeaker = MainActivity.SpeakerList.get(position);
+                // Find the speaker to work with.
+                Speaker currentSpeaker = MainActivity.SpeakerList.get(position);
 
-            // Fill the view.
-            // Photo
-            ImageView imageView = (ImageView) itemView.findViewById(R.id.itemIcon);
-            imageView.setImageResource(currentSpeaker.getPhoto());
+                // Fill the view.
+                // Photo
+                ImageView imageView = (ImageView) convertView.findViewById(R.id.itemIcon);
+                imageView.setImageResource(currentSpeaker.getPhoto());
 
-            // Name
-            TextView textView = (TextView) itemView.findViewById(R.id.itemName);
-            textView.setText(currentSpeaker.getName());
+                // Name
+                TextView textView = (TextView) convertView.findViewById(R.id.itemName);
+                textView.setText(currentSpeaker.getName());
 
-            // Location
-            textView = (TextView) itemView.findViewById(R.id.itemLocation);
-            textView.setText(currentSpeaker.getLocation());
+                // Location
+                textView = (TextView) convertView.findViewById(R.id.itemLocation);
+                textView.setText(currentSpeaker.getLocation());
+            }
 
-            return itemView;
+            return convertView;
         }
     }
 }
