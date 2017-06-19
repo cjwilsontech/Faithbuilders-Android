@@ -156,8 +156,11 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
             case "Xavier":
                 destinationLatLng = new LatLng(47.146528, -122.441342);
                 break;
-            default: /* Admin */
+            case "Admin 101":
                 destinationLatLng = new LatLng(47.147106, -122.441691);
+                break;
+            case "University Center":
+                destinationLatLng = new LatLng(47.145293, -122.440437);
                 break;
         }
 

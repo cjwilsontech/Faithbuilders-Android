@@ -37,12 +37,7 @@ public class MapsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        // Set title
         getActivity().setTitle(R.string.label_maps);
-
-
-        //navigationView.getMenu().getItem(0).setChecked(true);
-
     }
 
     @Override

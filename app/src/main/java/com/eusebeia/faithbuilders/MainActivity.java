@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ScheduleList.add(new ScheduleItem("I am Arab and Christian", "Auditorium", "7:00 PM", "8:00 PM", 0, SpeakerList.get(13)));
 
             ScheduleList.add(new ScheduleItem("Registration and Displays", "Auditorium", "9:00 AM", "9:30 AM", 1, null));
+            ScheduleList.add(new ScheduleItem("Youth Challenge", "University Center", "9:00 AM", "4:00 AM", 1, SpeakerList.get(12)));
             ScheduleList.add(new ScheduleItem("Walking in the Light", "Auditorium", "9:30 AM", "10:30 AM", 1, SpeakerList.get(6)));
             ScheduleList.add(new ScheduleItem("We Have the Message", "Admin 101", "9:30 AM", "10:30 AM", 1, SpeakerList.get(8)));
             ScheduleList.add(new ScheduleItem("What is Testing the Spirits?", "Xavier", "9:30 AM", "10:30 AM", 1, SpeakerList.get(11)));
