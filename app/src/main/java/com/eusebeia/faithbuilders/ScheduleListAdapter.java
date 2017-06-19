@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
@@ -15,7 +17,7 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 /**
  * Created by CJ on 7/5/2016.
  */
-public class ScheduleListAdapter extends BaseAdapter implements StickyListHeadersAdapter, SectionIndexer {
+class ScheduleListAdapter extends BaseAdapter implements StickyListHeadersAdapter, SectionIndexer {
     private final Context mContext;
     private ArrayList<ScheduleItem> mScheduleItems;
     private ArrayList<Integer> mSectionIndices;
@@ -78,35 +80,30 @@ public class ScheduleListAdapter extends BaseAdapter implements StickyListHeader
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder nameHolder, locationHolder, speakerHolder;
-
-        //if (convertView == null) {
+        if (convertView == null) {
             convertView = mInflater.inflate(R.layout.schedule_list_item, parent, false);
+        }
 
-            nameHolder = new ViewHolder();
-            nameHolder.text = (TextView) convertView.findViewById(R.id.schedule_list_name);
-            convertView.setTag(nameHolder);
+        // Create the schedule items.
+        ScheduleItem scheduleItem = mScheduleItems.get(position);
 
-            locationHolder = new ViewHolder();
-            locationHolder.text = (TextView) convertView.findViewById(R.id.schedule_list_location);
-            convertView.setTag(locationHolder);
+        TextView name = (TextView) convertView.findViewById(R.id.schedule_list_name);
+        TextView location = (TextView) convertView.findViewById(R.id.schedule_list_location);
+        TextView speaker = (TextView) convertView.findViewById(R.id.schedule_list_speaker);
+        TextView startTime = (TextView) convertView.findViewById(R.id.schedule_list_startTime);
+        TextView endTime = (TextView) convertView.findViewById(R.id.schedule_list_endTime);
 
-            speakerHolder = new ViewHolder();
-            speakerHolder.text = (TextView) convertView.findViewById(R.id.schedule_list_speaker);
-            convertView.setTag(speakerHolder);
-        //} else {
-            //nameHolder = (ViewHolder) convertView.getTag();
-            //locationHolder = (ViewHolder) convertView.getTag();
-            //speakerHolder = (ViewHolder) convertView.getTag();
-        //}
+        name.setText(scheduleItem.getName());
+        location.setText(scheduleItem.getLocation());
+        startTime.setText(scheduleItem.getTimeStart());
+        endTime.setText(scheduleItem.getTimeEnd());
 
-        nameHolder.text.setText(mScheduleItems.get(position).getName());
-        locationHolder.text.setText(mScheduleItems.get(position).getLocation());
-        if (mScheduleItems.get(position).getSpeaker() != null)
-            speakerHolder.text.setText(mScheduleItems.get(position).getSpeaker().getName());
-        else
-            speakerHolder.text.setText(R.string.speaker_unavailable);
-// AIzaSyBrIBk3YJy-LYzz5YDjgWTPxG8QWGSrjkM
+        if (scheduleItem.getSpeaker() != null) {
+            speaker.setText(scheduleItem.getSpeaker().getName());
+        } else {
+            speaker.setText(R.string.speaker_unavailable);
+        }
+
         return convertView;
     }
 
