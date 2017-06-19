@@ -1,135 +1,137 @@
-<ScrollView
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <View style="@style/DropShadow"/>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.eusebeia.faithbuilders.HomeFragment">
-
-        <View style="@style/DropShadow"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/logo"
-            android:layout_gravity="center_horizontal|top"
-            android:src="@drawable/logo"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"/>
+            tools:context="com.eusebeia.faithbuilders.HomeFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/title"
-            android:id="@+id/title"
-            android:layout_below="@+id/logo"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/theme"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/theme"/>
-
-
-        <View
-            style="@style/Divider"
-            android:id="@+id/homeDivider"
-            android:layout_below="@id/theme"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/locationGroup"
-            android:clickable="true"
-            android:focusable="true"
-            style="?android:attr/buttonStyle"
-            android:backgroundTint="@color/colorButtonBackground"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/homeDivider"
-            android:layout_marginTop="4dp"
-            android:padding="20dp">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_location"
-                android:id="@+id/location_icon"
-                android:layout_marginRight="6dp"
-                android:layout_marginEnd="6dp"/>
+                android:id="@+id/logo"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/logo"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/location"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-        </LinearLayout>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/title"
+                android:id="@+id/title"
+                android:layout_below="@+id/logo"
+                android:layout_centerHorizontal="true" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/locationGroup"
-            android:layout_alignStart="@id/locationGroup"
-            android:layout_alignRight="@id/locationGroup"
-            android:layout_alignEnd="@id/locationGroup"
-            android:id="@+id/websiteGroup"
-            android:clickable="true"
-            android:focusable="true"
-            style="?android:attr/buttonStyle"
-            android:backgroundTint="@color/colorButtonBackground"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/locationGroup"
-            android:layout_marginTop="4dp">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_web"
-                android:id="@+id/web_icon"
-                android:layout_marginRight="6dp"
-                android:layout_marginEnd="6dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_web"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-        </LinearLayout>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/theme"
+                android:layout_below="@id/title"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/theme"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/locationGroup"
-            android:layout_alignStart="@id/locationGroup"
-            android:layout_alignRight="@id/locationGroup"
-            android:layout_alignEnd="@id/locationGroup"
-            android:id="@+id/facebookGroup"
-            android:clickable="true"
-            android:focusable="true"
-            style="?android:attr/buttonStyle"
-            android:backgroundTint="@color/colorButtonBackground"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/websiteGroup"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="20dp">
-            <ImageView
+
+            <View
+                style="@style/Divider"
+                android:id="@+id/homeDivider"
+                android:layout_below="@id/theme"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/facebook"
-                android:id="@+id/facebook_icon"
-                android:layout_marginRight="6dp"
-                android:layout_marginEnd="6dp"/>
-            <TextView
+                android:id="@+id/locationGroup"
+                android:clickable="true"
+                android:focusable="true"
+                style="?android:attr/buttonStyle"
+                android:backgroundTint="@color/colorButtonBackground"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/homeDivider"
+                android:layout_marginTop="4dp"
+                android:padding="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location"
+                    android:id="@+id/location_icon"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginEnd="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_facebook"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_alignLeft="@id/locationGroup"
+                android:layout_alignStart="@id/locationGroup"
+                android:layout_alignRight="@id/locationGroup"
+                android:layout_alignEnd="@id/locationGroup"
+                android:id="@+id/websiteGroup"
+                android:clickable="true"
+                android:focusable="true"
+                style="?android:attr/buttonStyle"
+                android:backgroundTint="@color/colorButtonBackground"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/locationGroup"
+                android:layout_marginTop="4dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_web"
+                    android:id="@+id/web_icon"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginEnd="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_web"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </LinearLayout>
 
-</ScrollView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/locationGroup"
+                android:layout_alignStart="@id/locationGroup"
+                android:layout_alignRight="@id/locationGroup"
+                android:layout_alignEnd="@id/locationGroup"
+                android:id="@+id/facebookGroup"
+                android:clickable="true"
+                android:focusable="true"
+                style="?android:attr/buttonStyle"
+                android:backgroundTint="@color/colorButtonBackground"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/websiteGroup"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/facebook"
+                    android:id="@+id/facebook_icon"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginEnd="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_facebook"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
