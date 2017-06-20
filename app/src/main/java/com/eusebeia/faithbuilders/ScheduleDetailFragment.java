@@ -7,8 +7,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.InflateException;
@@ -121,12 +124,6 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
             String time = scheduleItem.getTimeStart() + " - " + scheduleItem.getTimeEnd();
             textView.setText(time);
 
-            // Set the toolbar title.
-            //toolbar.setTitle(currentSpeaker.getName());
-
-            mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.schedule_detail_map);
-            mapFragment.getMapAsync(this);
-
         } catch (InflateException e) {
             // Map is already there, just return the view as it is.
         }
@@ -135,13 +132,28 @@ public class ScheduleDetailFragment extends DialogFragment implements OnMapReady
     }
 
     public void onDestroyView() {
+        super.onDestroyView();
         if (mapFragment != null && mapFragment.isResumed()) {
-            getFragmentManager().beginTransaction().remove(mapFragment).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(mapFragment).commit();
         }
         if (locationManager != null && ContextCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationManager.removeUpdates(this);
         }
-        super.onDestroyView();
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        FragmentManager fm = getChildFragmentManager();
+        SupportMapFragment mapFragment = (SupportMapFragment) fm.findFragmentByTag("mapFragment");
+        if (mapFragment == null) {
+            mapFragment = new SupportMapFragment();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.schedule_detail_map, mapFragment, "mapFragment");
+            ft.commit();
+            fm.executePendingTransactions();
+        }
+        mapFragment.getMapAsync(this);
     }
 
     @Override
