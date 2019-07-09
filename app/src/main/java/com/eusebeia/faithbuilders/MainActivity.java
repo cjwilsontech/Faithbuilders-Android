@@ -35,64 +35,67 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setTitle(savedInstanceState.getCharSequence("title"));
         } else {
             // Initialize list of speakers.
-            SpeakerList.add(new Speaker("Behailu Endeshaw", "Kent, WA", getResources().getString(R.string.description_behailuendeshaw), R.drawable.behailuendeshaw));
-            SpeakerList.add(new Speaker("Carrell Dennis", "Renton, WA", getResources().getString(R.string.description_carrelldennis), R.drawable.carrelldennis));
-            SpeakerList.add(new Speaker("Jack Keller", "Ferndale, WA", getResources().getString(R.string.description_jackkeller), R.drawable.jackkeller));
-            SpeakerList.add(new Speaker("Jody Apple", "Knoxville, TN", getResources().getString(R.string.description_jodyapple), R.drawable.jodyapple));
-            SpeakerList.add(new Speaker("Kevin Bethea", "Baltimore, MD", getResources().getString(R.string.description_kevinbethea), R.drawable.kevinbethea));
-            SpeakerList.add(new Speaker("Lori Boyd", "Murfreesboro, TN", getResources().getString(R.string.description_loriboyd), R.drawable.loriboyd));
-            SpeakerList.add(new Speaker("Mark Jamieson", "Puyallup, WA", getResources().getString(R.string.description_markjamieson), R.drawable.markjamieson));
-            SpeakerList.add(new Speaker("Michael Whitworth", "Fort Worth, TX", getResources().getString(R.string.description_michaelwhitworth), R.drawable.michaelwhitworth));
-            SpeakerList.add(new Speaker("Rickie Hagan", "Red Boiling Springs, TN", getResources().getString(R.string.description_rickiehagan), R.drawable.rickiehagan));
-            SpeakerList.add(new Speaker("Samuel Jones", "Jackson, TN", getResources().getString(R.string.description_samueljones), R.drawable.samueljones));
-            SpeakerList.add(new Speaker("Wes Hanson", "Scappoose, OR", getResources().getString(R.string.description_weshanson), R.drawable.weshanson));
-            SpeakerList.add(new Speaker("Wissam Al-Aethawi", "Metro Detroit, MI", getResources().getString(R.string.description_wissamalaethawi), R.drawable.wissamalaethawi));
+            SpeakerList.add(new Speaker("Brandon Edwards", "Nashville, TN", getResources().getString(R.string.description_brandonedwards), R.drawable.brandonedwards));
+            SpeakerList.add(new Speaker("Dan Winkler", "Huntingdon, TN", getResources().getString(R.string.description_danwinkler), R.drawable.danwinkler));
+            SpeakerList.add(new Speaker("Dennis Baker", "Tacoma, WA", getResources().getString(R.string.description_dennisbaker), R.drawable.dennisbaker));
+            SpeakerList.add(new Speaker("Don Jacobs", "Olympia, WA", getResources().getString(R.string.description_donjacobs), R.drawable.donjacobs));
+            SpeakerList.add(new Speaker("John DeBerry", "Memphis, TN", getResources().getString(R.string.description_johndeberry), R.drawable.johndeberry));
+            SpeakerList.add(new Speaker("Julian Webster", "Nashville, TN", getResources().getString(R.string.description_julianwebster), R.drawable.julianwebster));
+            SpeakerList.add(new Speaker("Kenney Johnson", "Seattle, WA", getResources().getString(R.string.description_kenneyjohnson), R.drawable.kenneyjohnson));
+            SpeakerList.add(new Speaker("Lee Jamieson", "Tallahassee, FL", getResources().getString(R.string.description_leejamieson), R.drawable.leejamieson));
+            SpeakerList.add(new Speaker("Mike Greene", "Nashville, TN", getResources().getString(R.string.description_michaelgreene), R.drawable.michaelgreene));
+            SpeakerList.add(new Speaker("Ronnie Morrison", "Tacoma, WA", getResources().getString(R.string.description_ronniemorrison), R.drawable.ronniemorrison));
+            SpeakerList.add(new Speaker("Sheila Butt", "Columbia, TN", getResources().getString(R.string.description_sheilabutt), R.drawable.sheilabutt));
+            SpeakerList.add(new Speaker("Thomas Morse", "Renton, WA", getResources().getString(R.string.description_thomasmorse), R.drawable.thomasmorse));
 
             // Initialize list of classes.
-            ScheduleList.add(new ScheduleItem("Registration and Displays", "Music Center", "8:30 AM", "9:00 AM", 0, null));
-            ScheduleList.add(new ScheduleItem("It's Not Your Body!", "Music Center", "9:00 AM", "10:00 AM", 0, SpeakerList.get(3)));
-            ScheduleList.add(new ScheduleItem("Are They Saved or Lost?", "Music 306A", "9:00 AM", "10:00 AM", 0, SpeakerList.get(6)));
-            ScheduleList.add(new ScheduleItem("The Way We Walk", "Ingram 100", "9:00 AM", "10:00 AM", 0, SpeakerList.get(1)));
-            ScheduleList.add(new ScheduleItem("Islam Myth Buster", "Music Center", "10:15 AM", "11:15 AM", 0, SpeakerList.get(11)));
-            ScheduleList.add(new ScheduleItem("Radical Evangelism Pt. 1", "Music 306A", "10:15 AM", "11:15 AM", 0, SpeakerList.get(4)));
-            ScheduleList.add(new ScheduleItem("Better Teachers Pt. 1", "Ingram 100", "10:15 AM", "11:15 AM", 0, SpeakerList.get(7)));
-            ScheduleList.add(new ScheduleItem("Becoming a Two Mile Christian", "Music Center", "1:30 PM", "2:30 PM", 0, SpeakerList.get(9)));
-            ScheduleList.add(new ScheduleItem("PTSD Pt. 1", "Music Center", "2:45 PM", "3:45 PM", 0, SpeakerList.get(8)));
-            ScheduleList.add(new ScheduleItem("Beyond Our Boundaries", "Music 306A", "2:45 PM", "3:45 PM", 0, SpeakerList.get(5)));
-            ScheduleList.add(new ScheduleItem("Equipping Families to Manage Life's Storms Pt. 1", "Ingram 100", "2:45 PM", "3:45 PM", 0, SpeakerList.get(9)));
-            ScheduleList.add(new ScheduleItem("Uncomfortable Grace", "Music Center", "4:00 PM", "5:00 PM", 0, SpeakerList.get(2)));
-            ScheduleList.add(new ScheduleItem("The Mission of the Church", "Music 306A", "4:00 PM", "5:00 PM", 0, SpeakerList.get(0)));
-            ScheduleList.add(new ScheduleItem("The Cost of Being a Soldier", "Music Center", "7:00 PM", "8:00 PM", 0, SpeakerList.get(8)));
+            ScheduleList.add(new ScheduleItem("Registration and Displays", "Foyer", "8:30 AM", "9:00 AM", 0, null));
+            ScheduleList.add(new ScheduleItem("By the Blood of the Cross", "Auditorium", "9:00 AM", "10:00 AM", 0, SpeakerList.get(7)));
+            ScheduleList.add(new ScheduleItem("The Fear of the Lord", "Room #1", "9:00 AM", "10:00 AM", 0, SpeakerList.get(9)));
+            ScheduleList.add(new ScheduleItem("Fostering Reconciliation", "Room #2", "9:00 AM", "10:00 AM", 0, SpeakerList.get(3)));
+            ScheduleList.add(new ScheduleItem("Forgiving Myself", "Auditorium", "10:15 AM", "11:15 AM", 0, SpeakerList.get(1)));
+            ScheduleList.add(new ScheduleItem("What is Family Ministry?", "Room #1", "10:15 AM", "11:15 AM", 0, SpeakerList.get(2)));
+            ScheduleList.add(new ScheduleItem("Fellowship Conundrum", "Room #2", "10:15 AM", "11:15 AM", 0, SpeakerList.get(6)));
+            ScheduleList.add(new ScheduleItem("The Relationship of 2 Corinthians to 1 Corinthians", "Auditorium", "1:30 PM", "2:30 PM", 0, SpeakerList.get(8)));
+            ScheduleList.add(new ScheduleItem("Brother to Brother", "Auditorium", "2:45 PM", "3:45 PM", 0, SpeakerList.get(8)));
+            ScheduleList.add(new ScheduleItem("The Beauty of Reconciliation", "Room #1", "2:45 PM", "3:45 PM", 0, SpeakerList.get(10)));
+            ScheduleList.add(new ScheduleItem("Joseph and his Brothers", "Room #2", "2:45 PM", "3:45 PM", 0, SpeakerList.get(5)));
+            ScheduleList.add(new ScheduleItem("World Through Eyes of Faith (Part 1)", "Auditorium", "4:00 PM", "5:00 PM", 0, SpeakerList.get(4)));
+            ScheduleList.add(new ScheduleItem("A Christian Online Community", "Room #1", "4:00 PM", "5:00 PM", 0, SpeakerList.get(0)));
+			ScheduleList.add(new ScheduleItem("Reconciliation in the Home - Lamplighters (Part 1)", "Room #2", "4:00 PM", "5:00 PM", 0, SpeakerList.get(11)));
+            ScheduleList.add(new ScheduleItem("Reconciled in Glory", "Auditorium", "7:30 PM", "8:30 PM", 0, SpeakerList.get(7)));
+            
+            ScheduleList.add(new ScheduleItem("Registration and Displays", "Foyer", "8:30 AM", "9:00 AM", 1, null));
+            ScheduleList.add(new ScheduleItem("For the Glory of God", "Auditorium", "9:00 AM", "10:00 AM", 1, SpeakerList.get(7)));
+            ScheduleList.add(new ScheduleItem("The Love of Christ", "Room #1", "9:00 AM", "10:00 AM", 1, SpeakerList.get(9)));
+            ScheduleList.add(new ScheduleItem("Adoption Reconciliation", "Room #2", "9:00 AM", "10:00 AM", 1, SpeakerList.get(3)));
+            ScheduleList.add(new ScheduleItem("Forgiving Others", "Auditorium", "10:15 AM", "11:15 AM", 1, SpeakerList.get(1)));
+            ScheduleList.add(new ScheduleItem("The Goal of Family Ministry", "Room #1", "10:15 AM", "11:15 AM", 1, SpeakerList.get(2)));
+            ScheduleList.add(new ScheduleItem("Race Reconciliation (Part 1)", "Room #2", "10:15 AM", "11:15 AM", 1, SpeakerList.get(6)));
+            ScheduleList.add(new ScheduleItem("Connecting People to God", "Auditorium", "1:30 PM", "2:30 PM", 1, SpeakerList.get(5)));
+            ScheduleList.add(new ScheduleItem("Leadership to Members", "Auditorium", "2:45 PM", "3:45 PM", 1, SpeakerList.get(8)));
+            ScheduleList.add(new ScheduleItem("Jesus and Reconciliation", "Room #1", "2:45 PM", "3:45 PM", 1, SpeakerList.get(10)));
+            ScheduleList.add(new ScheduleItem("David and the Lord", "Room #2", "2:45 PM", "3:45 PM", 1, SpeakerList.get(5)));
+            ScheduleList.add(new ScheduleItem("World Through Eyes of Faith (Part 2)", "Auditorium", "4:00 PM", "5:00 PM", 1, SpeakerList.get(4)));
+			ScheduleList.add(new ScheduleItem("Evangelizing through Social Media", "Room #1", "4:00 PM", "5:00 PM", 1, SpeakerList.get(0)));
+			ScheduleList.add(new ScheduleItem("Reconciliation in the Home - Lamplighters (Part 2)", "Room #2", "4:00 PM", "5:00 PM", 1, SpeakerList.get(11)));
+            ScheduleList.add(new ScheduleItem("Need to Reconcile", "Auditorium", "7:30 PM", "8:30 PM", 1, SpeakerList.get(4)));
 
-            ScheduleList.add(new ScheduleItem("Registration and Displays", "Music Center", "8:30 AM", "9:00 AM", 1, null));
-            ScheduleList.add(new ScheduleItem("Youth Challenge", "University Center", "9:00 AM", "4:00 PM", 1, SpeakerList.get(10)));
-            ScheduleList.add(new ScheduleItem("It's Not Your Money!", "Music Center", "9:00 AM", "10:00 AM", 1, SpeakerList.get(3)));
-            ScheduleList.add(new ScheduleItem("Fan or Follower?", "Music 306A", "9:00 AM", "10:00 AM", 1, SpeakerList.get(6)));
-            ScheduleList.add(new ScheduleItem("The Want We Have", "Ingram 100", "9:00 AM", "10:00 AM", 1, SpeakerList.get(1)));
-            ScheduleList.add(new ScheduleItem("The Temple: The 3rd of the Two Sacred Places", "Music Center", "10:15 AM", "11:15 AM", 1, SpeakerList.get(11)));
-            ScheduleList.add(new ScheduleItem("Radical Evangelism Pt. 2", "Music 306A", "10:15 AM", "11:15 AM", 1, SpeakerList.get(4)));
-            ScheduleList.add(new ScheduleItem("Better Teachers Pt. 2", "Ingram 100", "10:15 AM", "11:15 AM", 1, SpeakerList.get(7)));
-            ScheduleList.add(new ScheduleItem("Creating Contagious Faith", "Music Center", "1:30 PM", "2:30 PM", 1, SpeakerList.get(4)));
-            ScheduleList.add(new ScheduleItem("PTSD Pt. 2", "Music Center", "2:45 PM", "3:45 PM", 1, SpeakerList.get(8)));
-            ScheduleList.add(new ScheduleItem("Beyond Our Walls", "Music 306A", "2:45 PM", "3:45 PM", 1, SpeakerList.get(5)));
-            ScheduleList.add(new ScheduleItem("Equipping Families to Manage Life's Storms Pt. 2", "Ingram 100", "2:45 PM", "3:45 PM", 1, SpeakerList.get(9)));
-            ScheduleList.add(new ScheduleItem("Uncomfortable Mercy", "Music Center", "4:00 PM", "5:00 PM", 1, SpeakerList.get(2)));
-            ScheduleList.add(new ScheduleItem("Passing the Gospel Torch", "Music 306A", "4:00 PM", "5:00 PM", 1, SpeakerList.get(0)));
-            ScheduleList.add(new ScheduleItem("It's Not About You; It's All About God!", "Music Center", "7:00 PM", "8:00 PM", 1, SpeakerList.get(3)));
-
-            ScheduleList.add(new ScheduleItem("Registration and Displays", "Music Center", "8:30 AM", "9:00 AM", 2, null));
-            ScheduleList.add(new ScheduleItem("It's Not Your Time!", "Music Center", "9:00 AM", "10:00 AM", 2, SpeakerList.get(3)));
-            ScheduleList.add(new ScheduleItem("Draw a Crowd or Make Disciples?", "Music 306A", "9:00 AM", "10:00 AM", 2, SpeakerList.get(6)));
-            ScheduleList.add(new ScheduleItem("The Wreck We Face", "Ingram 100", "9:00 AM", "10:00 AM", 2, SpeakerList.get(1)));
-            ScheduleList.add(new ScheduleItem("What I Learned (and Didn't Learn) From Muslims", "Music Center", "10:15 AM", "11:15 AM", 2, SpeakerList.get(11)));
-            ScheduleList.add(new ScheduleItem("Radical Evangelism Pt. 3", "Music 306A", "10:15 AM", "11:15 AM", 2, SpeakerList.get(4)));
-            ScheduleList.add(new ScheduleItem("Better Teachers Pt. 3", "Ingram 100", "10:15 AM", "11:15 AM", 2, SpeakerList.get(7)));
-            ScheduleList.add(new ScheduleItem("Dealing With Grief", "Music Center", "1:30 PM", "2:30 PM", 2, SpeakerList.get(7)));
-            ScheduleList.add(new ScheduleItem("PTSD Pt. 3", "Music Center", "2:45 PM", "3:45 PM", 2, SpeakerList.get(8)));
-            ScheduleList.add(new ScheduleItem("Beyond Our Words", "Music 306A", "2:45 PM", "3:45 PM", 2, SpeakerList.get(5)));
-            ScheduleList.add(new ScheduleItem("Equipping Families to Manage Life's Storms Pt. 3", "Ingram 100", "2:45 PM", "3:45 PM", 2, SpeakerList.get(9)));
-            ScheduleList.add(new ScheduleItem("As a Light to the Muslims", "Music Center", "5:00 PM", "6:00 PM", 2, SpeakerList.get(11)));
-
+            ScheduleList.add(new ScheduleItem("Registration and Displays", "Foyer", "8:30 AM", "9:00 AM", 2, null));
+            ScheduleList.add(new ScheduleItem("For the World to See", "Auditorium", "9:00 AM", "10:00 AM", 2, SpeakerList.get(7)));
+            ScheduleList.add(new ScheduleItem("The Commission of Christ", "Room #1", "9:00 AM", "10:00 AM", 2, SpeakerList.get(9)));
+            ScheduleList.add(new ScheduleItem("Return Home Reconciliation", "Room #2", "9:00 AM", "10:00 AM", 2, SpeakerList.get(3)));
+            ScheduleList.add(new ScheduleItem("Forgiving God", "Auditorium", "10:15 AM", "11:15 AM", 2, SpeakerList.get(1)));
+            ScheduleList.add(new ScheduleItem("Effective Family Ministry", "Room #1", "10:15 AM", "11:15 AM", 2, SpeakerList.get(2)));
+            ScheduleList.add(new ScheduleItem("Race Reconciliation (Part 2)", "Room #2", "10:15 AM", "11:15 AM", 2, SpeakerList.get(6)));
+            ScheduleList.add(new ScheduleItem("Racial Reconciliation", "Auditorium", "1:30 PM", "2:30 PM", 2, SpeakerList.get(5)));
+            ScheduleList.add(new ScheduleItem("Members to Leadership", "Auditorium", "2:45 PM", "3:45 PM", 2, SpeakerList.get(8)));
+            ScheduleList.add(new ScheduleItem("Hannah", "Room #1", "2:45 PM", "3:45 PM", 2, SpeakerList.get(10)));
+            ScheduleList.add(new ScheduleItem("Saul and Jesus", "Room #2", "2:45 PM", "3:45 PM", 2, SpeakerList.get(5)));
+            ScheduleList.add(new ScheduleItem("World Through Eyes of Faith (Part 3)", "Auditorium", "4:00 PM", "5:00 PM", 2, SpeakerList.get(4)));
+            ScheduleList.add(new ScheduleItem("The Art of Creative Ministry", "Room #1", "4:00 PM", "5:00 PM", 2, SpeakerList.get(0)));
+			ScheduleList.add(new ScheduleItem("Grace: Reconciled to God", "Auditorium", "5:30 PM", "6:30 PM", 2, SpeakerList.get(1)));
+            
             changeFragment(new HomeFragment(), false);
         }
 

@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         navGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent navigation = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=Pacific+Lutheran+University"));
+                Intent navigation = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=Lakeview+Church+of+Christ"));
                 startActivity(navigation);
             }
         });
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
         facebookGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/FaithBuilders2018/"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/FaithBuildersNW/"));
                 startActivity(browserIntent);
             }
         });
